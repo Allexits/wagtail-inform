@@ -7,7 +7,7 @@ VERSION = "2.0.122"
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
-SECRET_KEY = "django-insecure-+_@f-8v5nsz3gnwuh!m00&#x7m_yw913x@ob9wq)rpp!6!0s!)"
+SECRET_KEY = "django-insecure-+_@f-8v5nsz3gnwuh!m00&#x7m_yw913x@ob9wq)rpp!6!0s!0"
 
 INSTALLED_APPS = [
     "home",
@@ -44,10 +44,12 @@ INSTALLED_APPS = [
     "wagtail_color_panel",
     "wagtail_icon_picker",
     "wagtailorderable",
+    #"corsheaders",
     "rest_framework",
 ]
 
 MIDDLEWARE = [
+    #"corsheaders.middleware.CorsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -58,9 +60,7 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
-MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware"
-] + MIDDLEWARE
+
 
 ROOT_URLCONF = "inform.urls"
 
@@ -220,7 +220,9 @@ OIDC_STAFF_ROLES = {"administrator", "editor"}
 # http://localhost:8000 to the URL it's replacing.
 IMG_REPLACE_HOST = None
 
-CORS_ALLOWED_ORIGINS = ["http://localhost"]
-
 WAGTAILIMAGES_INDEX_PAGE_SIZE = 18
 WAGTAIL_FILE_NAME_MAX_LENGTH = 255
+
+CORS_ORIGIN_ALLOW_ALL = True # for development mode only
+
+ALLOWED_HOSTS = ['*']
