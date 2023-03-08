@@ -15,7 +15,7 @@ pydantic = "^1.9.0"
 backoff = "^1.11.1"
 django-storages = "^1.12.3"
 boto3 = "^1.21.35"
-whitenoise = "^6.0.0"
+whitenoise = {extras = ["brotli"], version = "^6.4.0"}
 PyYAML = "^6.0"
 django-iam-dbauth = "^0.1.4"
 elasticsearch = ">=7.0.0,<7.14"

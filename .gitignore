@@ -1,7 +1,7 @@
 /pgdumps
 
 # JSON files in the root dir (usually the result of a management command or some dev work)
-/*.json
+
 
 *.csv
 *.sqlite3.gz
